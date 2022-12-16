@@ -34,7 +34,7 @@ public class ChiTietHD extends javax.swing.JFrame {
     }
     public void setInitTable(){
         modelCT = new DefaultTableModel();
-        modelCT.setColumnIdentifiers(new String[]{"Mã món","Tên món","Số lượng","Giá","Thành tiền"});
+        modelCT.setColumnIdentifiers(new String[]{"Mã sản phẩm","Tên sản phẩm","Số lượng","Giá","Giá giảm","Giá còn lại","Thành tiền"});
         tblCT.setModel(modelCT);
     }
     public void loadTableCTHD(){
@@ -83,7 +83,7 @@ public class ChiTietHD extends javax.swing.JFrame {
                 .addComponent(lblMaHD, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
         );
 
-        cbxSearch_1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mã món", "Tên món" }));
+        cbxSearch_1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mã sản phẩm", "Tên sản phẩm" }));
         cbxSearch_1.setBorder(javax.swing.BorderFactory.createTitledBorder("Tìm theo"));
 
         txtSearch.setBorder(javax.swing.BorderFactory.createTitledBorder("Tìm kiếm"));
@@ -219,10 +219,10 @@ public class ChiTietHD extends javax.swing.JFrame {
         String searchType = String.valueOf(cbxSearch_1.getSelectedItem());
         
         switch (searchType) {
-            case "Mã món":
+            case "Mã sản phẩm":
                 cthdbll.timKiemCTHDTheoMaMon(modelCT,search,ma_hd);
                 break;
-            case "Tên món":
+            case "Tên sản phẩm":
                 cthdbll.timKiemCTHDTheoTenMon(modelCT,search,ma_hd);
                 break;
         }

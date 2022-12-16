@@ -31,6 +31,7 @@ public class CTHoaDonDAL {
                     rs.getString("ten_mon"),
                     rs.getInt("so_luong"),
                     rs.getInt("gia_mon"),
+                    rs.getInt("gia_giam"),
                     rs.getInt("thanh_tien")
                 ));
             }
@@ -43,8 +44,8 @@ public class CTHoaDonDAL {
     }
     public void insertData(String []str){
         try {
-            String query = "INSERT INTO `chi_tiet_hoa_don`(`ma_hoa_don`, `ma_mon`, `ten_mon`, `so_luong`, `gia_mon`, `thanh_tien`) "
-                + "VALUES ('"+str[0]+"','"+str[1]+"','"+str[2]+"','"+str[3]+"','"+str[4]+"','"+str[5]+"')";
+            String query = "INSERT INTO `chi_tiet_hoa_don`(`ma_hoa_don`, `ma_mon`, `ten_mon`, `so_luong`, `gia_mon`,`gia_giam`, `thanh_tien`) "
+                + "VALUES ('"+str[0]+"','"+str[1]+"','"+str[2]+"','"+str[3]+"','"+str[4]+"','"+str[5]+"','"+str[6]+"')";
             dataProvider.ExecuteUpdate(query);
             dataProvider.closeConnect();   
         } catch (Exception e) {

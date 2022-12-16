@@ -140,6 +140,8 @@ public class MonAnBLL {
                     monAnDTO.getMa_mon(),
                     monAnDTO.getTen_mon(),
                     monAnDTO.getGia(),
+                    monAnDTO.getGia_giam(),
+                    (int)((int)monAnDTO.getGia() - (int)monAnDTO.getGia_giam()),
                     monAnDTO.getSo_luong()
                 });
             }

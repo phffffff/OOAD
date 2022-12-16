@@ -26,7 +26,7 @@ public class ChiTietDN extends javax.swing.JFrame {
     }
     public void initTableCTDN(){
         model = new DefaultTableModel();
-        model.setColumnIdentifiers(new String[]{"Mã món","Tên món","Số lượng","Giá","Thành tiền"});
+        model.setColumnIdentifiers(new String[]{"Mã sản phẩm","Tên sản phẩm","Số lượng","Giá","Thành tiền"});
         tblCT.setModel(model);
     }
     /**
@@ -207,10 +207,10 @@ public class ChiTietDN extends javax.swing.JFrame {
         String searchType = String.valueOf(cbxSearch_1.getSelectedItem());
 
         switch (searchType) {
-            case "Mã món":
+            case "Mã sản phẩm":
             cTDonDatHangBLL.timKiemCTNDTheoMaMon(model,search,ma_dn);
             break;
-            case "Tên món":
+            case "Tên sản phẩm":
             cTDonDatHangBLL.timKiemCTHDTheoTenMon(model,search,ma_dn);
             break;
         }

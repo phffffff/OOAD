@@ -63,7 +63,7 @@ public class CtkmForm extends javax.swing.JFrame {
 //    }
     public void initTableCTCTKM(){
         model = new DefaultTableModel();
-        String []str = {"Mã Món","Tên Món","Giá gốc","Giá Giảm","Giá còn lại","Loại"};
+        String []str = {"Mã sản phẩm","Tên sản phẩm","Giá gốc","Giá Giảm","Giá còn lại","Loại"};
         model.setColumnIdentifiers(str);
         tblCTCTKM.setModel(model);
     }
@@ -163,7 +163,7 @@ public class CtkmForm extends javax.swing.JFrame {
         );
 
         btnThemCTCTKM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_add_30px.png"))); // NOI18N
-        btnThemCTCTKM.setText("Thêm món");
+        btnThemCTCTKM.setText("Thêm SP");
         btnThemCTCTKM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnThemCTCTKMActionPerformed(evt);
@@ -171,7 +171,7 @@ public class CtkmForm extends javax.swing.JFrame {
         });
 
         btnSuaCTCTMK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_wrench_30px.png"))); // NOI18N
-        btnSuaCTCTMK.setText("Sửa món");
+        btnSuaCTCTMK.setText("Sửa SP");
         btnSuaCTCTMK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSuaCTCTMKActionPerformed(evt);
@@ -213,7 +213,7 @@ public class CtkmForm extends javax.swing.JFrame {
         );
 
         cbLoaiOfKm.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cbLoaiOfKm.setBorder(javax.swing.BorderFactory.createTitledBorder("Loại món"));
+        cbLoaiOfKm.setBorder(javax.swing.BorderFactory.createTitledBorder("Loại sản phẩm "));
         cbLoaiOfKm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbLoaiOfKmActionPerformed(evt);
@@ -221,7 +221,7 @@ public class CtkmForm extends javax.swing.JFrame {
         });
 
         cbxMonOfKm.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cbxMonOfKm.setBorder(javax.swing.BorderFactory.createTitledBorder("Món"));
+        cbxMonOfKm.setBorder(javax.swing.BorderFactory.createTitledBorder("Sản phẩm "));
 
         txtTienGiam.setBorder(javax.swing.BorderFactory.createTitledBorder("Tiền giảm"));
 

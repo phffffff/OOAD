@@ -32,10 +32,11 @@ public class CTHoaDonBLL {
             String ma_mon = (String) model.getValueAt(i,0);
             String ten_mon = (String) model.getValueAt(i,1);
             String gia = String.valueOf(model.getValueAt(i,2));
-            String so_luong = String.valueOf(model.getValueAt(i,3));
-            String thanh_tien = String.valueOf(model.getValueAt(i,4));
+            String gia_giam = String.valueOf(model.getValueAt(i,3));
+            String so_luong = String.valueOf(model.getValueAt(i,5));
+            String thanh_tien = String.valueOf(model.getValueAt(i,6));
             
-            cTHoaDonDAL.insertData(new String[]{ma_hd,ma_mon,ten_mon,so_luong,gia,thanh_tien});
+            cTHoaDonDAL.insertData(new String[]{ma_hd,ma_mon,ten_mon,so_luong,gia,gia_giam,thanh_tien});
             new MonAnBLL().updateSoLuongSauKhiKhachMua(ma_mon,Integer.parseInt(so_luong));
         }
         this.resetListCTHD();
@@ -55,6 +56,8 @@ public class CTHoaDonBLL {
                 cTHoaDonDTO.getTen_mon(),
                 cTHoaDonDTO.getSo_luong(),
                 cTHoaDonDTO.getGia_mon(),
+                cTHoaDonDTO.getGia_giam(),
+                (int)((int)cTHoaDonDTO.getGia_mon() - (int)cTHoaDonDTO.getGia_giam()),
                 cTHoaDonDTO.getThanh_tien()
             });
         }
@@ -79,6 +82,8 @@ public class CTHoaDonBLL {
                     cTHoaDonDTO.getTen_mon(),
                     cTHoaDonDTO.getSo_luong(),
                     cTHoaDonDTO.getGia_mon(),
+                    cTHoaDonDTO.getGia_giam(),
+                    (int)((int)cTHoaDonDTO.getGia_mon()-(int)cTHoaDonDTO.getGia_giam()),
                     cTHoaDonDTO.getThanh_tien()
                 });
             }
@@ -100,6 +105,8 @@ public class CTHoaDonBLL {
                     cTHoaDonDTO.getTen_mon(),
                     cTHoaDonDTO.getSo_luong(),
                     cTHoaDonDTO.getGia_mon(),
+                    cTHoaDonDTO.getGia_giam(),
+                    (int)((int)cTHoaDonDTO.getGia_mon()-(int)cTHoaDonDTO.getGia_giam()),
                     cTHoaDonDTO.getThanh_tien()
                 });
             }
@@ -121,6 +128,8 @@ public class CTHoaDonBLL {
                     cTHoaDonDTO.getTen_mon(),
                     cTHoaDonDTO.getSo_luong(),
                     cTHoaDonDTO.getGia_mon(),
+                    cTHoaDonDTO.getGia_giam(),
+                    (int)((int)cTHoaDonDTO.getGia_mon()-(int)cTHoaDonDTO.getGia_giam()),
                     cTHoaDonDTO.getThanh_tien()
                 });
             }
@@ -142,6 +151,8 @@ public class CTHoaDonBLL {
                     cTHoaDonDTO.getTen_mon(),
                     cTHoaDonDTO.getSo_luong(),
                     cTHoaDonDTO.getGia_mon(),
+                    cTHoaDonDTO.getGia_giam(),
+                    (int)((int)cTHoaDonDTO.getGia_mon()-(int)cTHoaDonDTO.getGia_giam()),
                     cTHoaDonDTO.getThanh_tien()
                 });
             }
@@ -163,6 +174,8 @@ public class CTHoaDonBLL {
                     cTHoaDonDTO.getTen_mon(),
                     cTHoaDonDTO.getSo_luong(),
                     cTHoaDonDTO.getGia_mon(),
+                    cTHoaDonDTO.getGia_giam(),
+                    (int)((int)cTHoaDonDTO.getGia_mon()-(int)cTHoaDonDTO.getGia_giam()),
                     cTHoaDonDTO.getThanh_tien()
                 });
             }

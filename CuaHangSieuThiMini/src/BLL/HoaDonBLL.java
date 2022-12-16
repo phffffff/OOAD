@@ -40,7 +40,7 @@ public class HoaDonBLL {
        return this.listExcelHD;
     }
     public void resetListExcel(){
-        if(!listExcelHD.isEmpty()){
+        while(!listExcelHD.isEmpty()){
             listExcelHD.remove(0);
         }
     }

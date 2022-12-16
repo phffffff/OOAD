@@ -10,12 +10,13 @@ package DTO;
  */
 public class CTHoaDonDTO {
 
-    public CTHoaDonDTO(String ma_hoa_don, String ma_mon, String ten_mon, int so_luong, int gia_mon, int thanh_tien) {
+    public CTHoaDonDTO(String ma_hoa_don, String ma_mon, String ten_mon, int so_luong, int gia_mon, int gia_giam, int thanh_tien) {
         this.ma_hoa_don = ma_hoa_don;
         this.ma_mon = ma_mon;
         this.ten_mon = ten_mon;
         this.so_luong = so_luong;
         this.gia_mon = gia_mon;
+        this.gia_giam = gia_giam;
         this.thanh_tien = thanh_tien;
     }
     
@@ -24,6 +25,7 @@ public class CTHoaDonDTO {
     private String ten_mon;
     private int so_luong;
     private int gia_mon;
+    private int gia_giam;
     private int thanh_tien;    
     
     public CTHoaDonDTO(){
@@ -67,6 +69,14 @@ public class CTHoaDonDTO {
 
     public void setGia_mon(int gia_mon) {
         this.gia_mon = gia_mon;
+    }
+    
+    public int getGia_giam() {
+        return gia_giam;
+    }
+
+    public void setGia_giam(int gia_giam) {
+        this.gia_giam = gia_giam;
     }
 
     public int getThanh_tien() {

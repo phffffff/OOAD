@@ -94,14 +94,14 @@ public class ManageForm extends javax.swing.JFrame {
     private void initTitleTableFood(){
         model = new DefaultTableModel();
         model.setColumnIdentifiers(new Object[]{
-            "Mã món","Tên món","Giá","Số lượng còn"
+            "Mã sản phẩm","Tên sản phẩm","Giá","Giá giảm","Giá còn lại","Số lượng còn"
         });
         tblFoodManage.setModel(model);
     }
     private void initTitleTableBillInfo(){
         model_1 = new DefaultTableModel();
         model_1.setColumnIdentifiers(new String[]{
-            "Mã món","Tên món","Giá","Số lượng","Thành tiền"
+            "Mã sản phẩm","Tên sản phẩm","Giá","Giá giảm","Giá còn lại","Số lượng","Thành tiền"
         });
         tblInfobill.setModel(model_1);
     }
@@ -114,7 +114,7 @@ public class ManageForm extends javax.swing.JFrame {
     private void tinhtong(){
         int tong = 0;
         for(int i = 0 ; i < model_1.getRowCount() ; i++){
-            tong += (int) model_1.getValueAt(i, 4);
+            tong += (int) model_1.getValueAt(i, 6);
         }
         lblTotalPrice.setText(String.valueOf(tong));
     }
@@ -201,7 +201,7 @@ public class ManageForm extends javax.swing.JFrame {
         setTitle("Quản lý bán hàng");
 
         btnAddFood.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_add_30px.png"))); // NOI18N
-        btnAddFood.setText("Thêm món");
+        btnAddFood.setText("Thêm sản phẩm");
         btnAddFood.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddFoodActionPerformed(evt);
@@ -209,7 +209,7 @@ public class ManageForm extends javax.swing.JFrame {
         });
 
         cbxCategory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cbxCategory.setBorder(javax.swing.BorderFactory.createTitledBorder("Loại món"));
+        cbxCategory.setBorder(javax.swing.BorderFactory.createTitledBorder("Loại sản phẩm"));
         cbxCategory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxCategoryActionPerformed(evt);
@@ -217,7 +217,7 @@ public class ManageForm extends javax.swing.JFrame {
         });
 
         btnXoaMon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_cancel_30px_1.png"))); // NOI18N
-        btnXoaMon.setText("Xóa món");
+        btnXoaMon.setText("Xóa sản phẩm");
         btnXoaMon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnXoaMonActionPerformed(evt);
@@ -231,8 +231,8 @@ public class ManageForm extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(cbxCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAddFood, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnAddFood, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnXoaMon)
                 .addGap(6, 6, 6)
@@ -472,7 +472,7 @@ public class ManageForm extends javax.swing.JFrame {
         jScrollPane3.setViewportView(tblInfobill);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel1.setText("Hóa đơn");
+        jLabel1.setText("CART");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -586,8 +586,10 @@ public class ManageForm extends javax.swing.JFrame {
                     monAnDTO.getMa_mon(),
                     monAnDTO.getTen_mon(),
                     monAnDTO.getGia(),
+                    monAnDTO.getGia_giam(),
+                    (int)((int)monAnDTO.getGia() - (int)monAnDTO.getGia_giam()),
                     soLuongMua,
-                    (int)(monAnDTO.getGia()*soLuongMua)
+                    (int)(((int)monAnDTO.getGia() - (int)monAnDTO.getGia_giam())*(int)soLuongMua)
                 });
                 model_1.fireTableDataChanged();
                 
@@ -597,17 +599,17 @@ public class ManageForm extends javax.swing.JFrame {
             else{
                 for(int i = 0 ; i < model_1.getRowCount() ; i++){
                     if(model_1.getValueAt(i, 0).equals(maMon)){
-                        int soluong = ((int) model_1.getValueAt(i,3)+ soLuongMua);
-                        int thanhtien = (int)(model_1.getValueAt(i,2))*soluong;
-                        model_1.setValueAt(soluong, i,3);
-                        model_1.setValueAt(thanhtien, i,4);
+                        int soluong = ((int) model_1.getValueAt(i,5)+ soLuongMua);
+                        int thanhtien = (int)(model_1.getValueAt(i,4))*soluong;
+                        model_1.setValueAt(soluong, i,5);
+                        model_1.setValueAt(thanhtien, i,6);
                         model_1.fireTableDataChanged();
                         
                         tinhtong();
                         setGiaThanhToan();
                         
-                        int soLuongConLai = ((int)model.getValueAt(select,3)-(int)model_1.getValueAt(i,3));
-                        int soLuongTru = (int)model_1.getValueAt(i,3);
+                        int soLuongConLai = ((int)model.getValueAt(select,5)-(int)model_1.getValueAt(i,5));
+                        int soLuongTru = (int)model_1.getValueAt(i,5);
                         System.out.println(soLuongConLai);
                         SpinnerModel spinnerModel = new SpinnerNumberModel(
                             soLuongConLai == 0 ? 0 : 1,
@@ -615,7 +617,7 @@ public class ManageForm extends javax.swing.JFrame {
                             soLuongConLai,
                             1);
                         spnCount.setModel(spinnerModel);
-                        if((int)model_1.getValueAt(i,3) == 0){
+                        if((int)model_1.getValueAt(i,5) == 0){
                             model_1.removeRow(i);
                         }
                         return;
@@ -626,8 +628,10 @@ public class ManageForm extends javax.swing.JFrame {
                     monAnDTO.getMa_mon(),
                     monAnDTO.getTen_mon(),
                     monAnDTO.getGia(),
+                    monAnDTO.getGia_giam(),
+                    (int)((int)monAnDTO.getGia() - (int)monAnDTO.getGia_giam()),
                     soLuongMua,
-                    (int)(soLuongMua*monAnDTO.getGia())
+                    (int)((int)soLuongMua*(int)((int)monAnDTO.getGia() - (int)monAnDTO.getGia_giam()))
                 });
                 model_1.fireTableDataChanged();
                 
@@ -636,8 +640,8 @@ public class ManageForm extends javax.swing.JFrame {
             }
             for(int i = 0; i < model_1.getRowCount(); i++){
                 if(model_1.getValueAt(i,0).equals(maMon)){
-                    int soLuongConLai = ((int)model.getValueAt(select,3)-(int)model_1.getValueAt(i,3));
-                    int soLuongTru = (int)model_1.getValueAt(i,3);
+                    int soLuongConLai = ((int)model.getValueAt(select,5)-(int)model_1.getValueAt(i,5));
+                    int soLuongTru = (int)model_1.getValueAt(i,5);
                     System.out.println(soLuongConLai);
                     SpinnerModel spinnerModel = new SpinnerNumberModel(
                         soLuongConLai == 0 ? 0 : 1,
@@ -645,7 +649,7 @@ public class ManageForm extends javax.swing.JFrame {
                         soLuongConLai,
                         1);
                     spnCount.setModel(spinnerModel);
-                    if((int)model_1.getValueAt(i,3) == 0){
+                    if((int)model_1.getValueAt(i,5) == 0){
                         model_1.removeRow(i);
                     }
                 }
@@ -662,9 +666,9 @@ public class ManageForm extends javax.swing.JFrame {
             
             for(int i = 0; i < model_1.getRowCount();i++){
                 if(model_1.getValueAt(i,0).equals(maMon)){
-                    if((int)model.getValueAt(select,3) >= (int)model_1.getValueAt(i,3)){
-                        int soLuongConLai = (int)model.getValueAt(select,3) - (int)model_1.getValueAt(i, 3);
-                        int soLuongTru = (int)model_1.getValueAt(i,3);
+                    if((int)model.getValueAt(select,5) >= (int)model_1.getValueAt(i,5)){
+                        int soLuongConLai = (int)model.getValueAt(select,5) - (int)model_1.getValueAt(i, 5);
+                        int soLuongTru = (int)model_1.getValueAt(i,5);
                         SpinnerModel spinnerModel = new SpinnerNumberModel(
                             soLuongConLai == 0 ? 0 : 1,
                             (0-soLuongTru),
@@ -708,7 +712,7 @@ public class ManageForm extends javax.swing.JFrame {
         if(click >= 0){
             String ma_sp = String.valueOf(tblInfobill.getValueAt(click,0));
             int totalPrice = Integer.parseInt(lblTotalPrice.getText());
-            int giaSpXoa = (int) tblInfobill.getValueAt(click,2);
+            int giaSpXoa = (int) tblInfobill.getValueAt(click,4);
             int gia_giam = Integer.parseInt(lblGiam.getText());
             lblTotalPrice.setText(String.valueOf((totalPrice-giaSpXoa)));
             lblTotalPriceAfter.setText(String.valueOf(totalPrice-giaSpXoa-gia_giam));

@@ -231,7 +231,7 @@
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/image/icons8_add_30px.png"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Th&#xea;m m&#xf3;n"/>
+                        <Property name="text" type="java.lang.String" value="Th&#xea;m SP"/>
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnThemCTCTKMActionPerformed"/>
@@ -242,7 +242,7 @@
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/image/icons8_wrench_30px.png"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="S&#x1eed;a m&#xf3;n"/>
+                        <Property name="text" type="java.lang.String" value="S&#x1eed;a SP"/>
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSuaCTCTMKActionPerformed"/>
@@ -309,7 +309,7 @@
                         </Property>
                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                            <TitledBorder title="Lo&#x1ea1;i m&#xf3;n"/>
+                            <TitledBorder title="Lo&#x1ea1;i s&#x1ea3;n ph&#x1ea9;m "/>
                           </Border>
                         </Property>
                       </Properties>
@@ -332,7 +332,7 @@
                         </Property>
                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                            <TitledBorder title="M&#xf3;n"/>
+                            <TitledBorder title="S&#x1ea3;n ph&#x1ea9;m "/>
                           </Border>
                         </Property>
                       </Properties>

@@ -127,7 +127,7 @@ public class AdminForm extends javax.swing.JFrame {
     }
     // </editor-fold>                        
    
-    //Món án
+    //Sản phẩm
     // <editor-fold defaultstate="collapsed" desc="Generated Code">  
     public void MonAn(){
         initTableMonAn();
@@ -137,7 +137,7 @@ public class AdminForm extends javax.swing.JFrame {
     }
     private void initTableMonAn(){
         modelMA = new DefaultTableModel();
-        String []title = {"Mã món ăn","Tên món","Số lượng","Giá","Giá giảm","Giá hiện tại","Danh mục"};
+        String []title = {"Mã sản phẩm","Tên sản phẩm","Số lượng","Giá","Giá giảm","Giá hiện tại","Danh mục"};
         modelMA.setColumnIdentifiers(title);
         tblThucAn.setModel(modelMA);
     }
@@ -146,13 +146,13 @@ public class AdminForm extends javax.swing.JFrame {
     }
     private void loadComboboxSearchMonAn(){
         cbxSearchMA.removeAllItems();
-        cbxSearchMA.addItem("Mã món");
-        cbxSearchMA.addItem("Tên món");
+        cbxSearchMA.addItem("Mã sản phẩm");
+        cbxSearchMA.addItem("Tên sản phẩm");
         cbxSearchMA.addItem("Số lượng");
         cbxSearchMA.addItem("Giá");
         cbxSearchMA.addItem("Giá giảm");
         cbxSearchMA.addItem("Giá hiện tại");
-        cbxSearchMA.addItem("Loại món");
+        cbxSearchMA.addItem("Loại sản phẩm");
     }
     private void loadLoaiMonToComboBox(){
         modelCbxLM = new DefaultComboBoxModel();
@@ -259,7 +259,7 @@ public class AdminForm extends javax.swing.JFrame {
     }
     // </editor-fold> 
     
-    //Loại món ăn
+    //Loại sản phẩm
     // <editor-fold defaultstate="collapsed" desc="Generated Code">  
     public void LoaiThucAn(){
         initTableLMA();
@@ -268,7 +268,7 @@ public class AdminForm extends javax.swing.JFrame {
     }
     private void initTableLMA(){
         modelLMA = new DefaultTableModel();
-        String[] title = {"Mã loại","Tên loại thức ăn"};
+        String[] title = {"Mã loại","Tên loại sản phẩm"};
         modelLMA.setColumnIdentifiers(title);
         tblLoaiMA.setModel(modelLMA);
     }
@@ -298,18 +298,18 @@ public class AdminForm extends javax.swing.JFrame {
     }
     private void loadComboboxSearchDN(){
         cbxSearchDH.removeAllItems();
-        cbxSearchDH.addItem("Mã món");
-        cbxSearchDH.addItem("Tên món");
+        cbxSearchDH.addItem("Mã sản phẩm");
+        cbxSearchDH.addItem("Tên sản phẩm");
     }
     private void initTableFood(){
         modelFood = new DefaultTableModel();
-        String[] title = {"Mã món","Tên món","Giá"};
+        String[] title = {"Mã sản phẩm","Tên sản phẩm","Giá"};
         modelFood.setColumnIdentifiers(title);
         tblFood.setModel(modelFood);
     }
     private void initTableCTDonNhap(){
         modelCTDN = new DefaultTableModel();
-        String[] title = {"Mã món","Tên món","Giá","Số lượng","Thành tiền"};
+        String[] title = {"Mã sản phẩm","Tên sản phẩm","Giá","Số lượng","Thành tiền"};
         modelCTDN.setColumnIdentifiers(title);
         tblICTDonNhap.setModel(modelCTDN);
     }
@@ -835,11 +835,11 @@ public class AdminForm extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(800, 700));
 
         lblTongMA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTongMA.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Món", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 18))); // NOI18N
+        lblTongMA.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Sản phẩm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 18))); // NOI18N
         lblTongMA.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
 
         lblTongLM.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTongLM.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Loại món", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 18))); // NOI18N
+        lblTongLM.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Loại sản phẩm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 18))); // NOI18N
         lblTongLM.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
 
         lblTongNV.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1000,9 +1000,7 @@ public class AdminForm extends javax.swing.JFrame {
                         .addComponent(btnReLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel68Layout.createSequentialGroup()
-                        .addComponent(dPHDNgayTu, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                    .addComponent(dPHDNgayTu, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         jPanel68Layout.setVerticalGroup(
             jPanel68Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1068,7 +1066,7 @@ public class AdminForm extends javax.swing.JFrame {
                     .addComponent(txtSearchHDGiaDen, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cbxSearchHDGia, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtSearchHDGiaTu, javax.swing.GroupLayout.Alignment.LEADING))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -1084,9 +1082,9 @@ public class AdminForm extends javax.swing.JFrame {
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel70, javax.swing.GroupLayout.PREFERRED_SIZE, 116, Short.MAX_VALUE)
-            .addComponent(jPanel68, javax.swing.GroupLayout.PREFERRED_SIZE, 116, Short.MAX_VALUE)
-            .addComponent(jPanel69, javax.swing.GroupLayout.PREFERRED_SIZE, 116, Short.MAX_VALUE)
+            .addComponent(jPanel70, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel68, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel69, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         tblHoaDon.setModel(new javax.swing.table.DefaultTableModel(
@@ -1312,7 +1310,7 @@ public class AdminForm extends javax.swing.JFrame {
                 .addGroup(jPanel78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtSearchDN)
                     .addComponent(cbxSearchDN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(jPanel78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtSearchDNTongTienTU, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
                     .addComponent(txtSearchDNTongTienDen))
@@ -1332,9 +1330,9 @@ public class AdminForm extends javax.swing.JFrame {
         );
         jPanel75Layout.setVerticalGroup(
             jPanel75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel76, javax.swing.GroupLayout.PREFERRED_SIZE, 116, Short.MAX_VALUE)
-            .addComponent(jPanel77, javax.swing.GroupLayout.PREFERRED_SIZE, 116, Short.MAX_VALUE)
-            .addComponent(jPanel78, javax.swing.GroupLayout.PREFERRED_SIZE, 116, Short.MAX_VALUE)
+            .addComponent(jPanel76, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel77, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel78, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         tblDonNhap.setModel(new javax.swing.table.DefaultTableModel(
@@ -1441,7 +1439,7 @@ public class AdminForm extends javax.swing.JFrame {
             .addComponent(jTabbedPane2)
         );
 
-        jTabbedPane1.addTab("Doanh thu", jPanel2);
+        jTabbedPane1.addTab("Thống kê", jPanel2);
 
         tblLoaiMA.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1461,7 +1459,7 @@ public class AdminForm extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tblLoaiMA);
 
-        jLabel11.setText("DANH SÁCH LOẠI MÓN");
+        jLabel11.setText("DANH SÁCH SẢN PHẨM");
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
 
         javax.swing.GroupLayout jPanel63Layout = new javax.swing.GroupLayout(jPanel63);
@@ -1471,7 +1469,7 @@ public class AdminForm extends javax.swing.JFrame {
             .addGroup(jPanel63Layout.createSequentialGroup()
                 .addGap(73, 73, 73)
                 .addComponent(jLabel11)
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
         jPanel63Layout.setVerticalGroup(
             jPanel63Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1602,10 +1600,10 @@ public class AdminForm extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel3.setText("Mã loại thức ăn");
+        jLabel3.setText("Mã loại sản phẩm");
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jLabel4.setText("Tên loại thức ăn");
+        jLabel4.setText("Tên loại sản phẩm");
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
@@ -1697,7 +1695,7 @@ public class AdminForm extends javax.swing.JFrame {
             .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Danh mục thức ăn", jPanel3);
+        jTabbedPane1.addTab("Danh mục sản phẩm", jPanel3);
 
         tblThucAn.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1717,7 +1715,7 @@ public class AdminForm extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(tblThucAn);
 
-        jLabel22.setText("DANH SÁCH MÓN ĂN");
+        jLabel22.setText("DANH SÁCH SẢN PHẨM");
         jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
 
         javax.swing.GroupLayout jPanel64Layout = new javax.swing.GroupLayout(jPanel64);
@@ -1893,16 +1891,16 @@ public class AdminForm extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel1.setText("Mã món");
+        jLabel1.setText("Mã sản phẩm");
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jLabel2.setText("Tên món");
+        jLabel2.setText("Tên sản phẩm");
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jLabel5.setText("Giá");
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jLabel6.setText("Danh mục món");
+        jLabel6.setText("Danh mục");
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jLabel7.setText("Số Lượng");
@@ -1943,7 +1941,7 @@ public class AdminForm extends javax.swing.JFrame {
         txtGia.setBorder(javax.swing.BorderFactory.createTitledBorder("Giá"));
 
         cbbLoaiMon.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cbbLoaiMon.setBorder(javax.swing.BorderFactory.createTitledBorder("Danh mục loại món"));
+        cbbLoaiMon.setBorder(javax.swing.BorderFactory.createTitledBorder("Danh mục sản phẩm"));
         cbbLoaiMon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cbbLoaiMonMouseClicked(evt);
@@ -1956,7 +1954,7 @@ public class AdminForm extends javax.swing.JFrame {
         });
 
         lblMaMon.setBackground(new java.awt.Color(255, 255, 255));
-        lblMaMon.setBorder(javax.swing.BorderFactory.createTitledBorder("Mã món"));
+        lblMaMon.setBorder(javax.swing.BorderFactory.createTitledBorder("Mã sản phẩm"));
         lblMaMon.setOpaque(true);
 
         lblSoLuong.setText("0");
@@ -2031,7 +2029,7 @@ public class AdminForm extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Thức ăn", jPanel4);
+        jTabbedPane1.addTab("Sản phẩm", jPanel4);
 
         tblTaiKhoan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -2189,7 +2187,7 @@ public class AdminForm extends javax.swing.JFrame {
                         .addComponent(btnUpdateTK, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnDelTk, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(8, Short.MAX_VALUE))
         );
         jPanel26Layout.setVerticalGroup(
             jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2297,7 +2295,7 @@ public class AdminForm extends javax.swing.JFrame {
         jPanel27Layout.setHorizontalGroup(
             jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel27Layout.createSequentialGroup()
-                .addComponent(jPanel28, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -2319,7 +2317,7 @@ public class AdminForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, 437, Short.MAX_VALUE))
+                    .addComponent(jPanel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -2468,7 +2466,7 @@ public class AdminForm extends javax.swing.JFrame {
                     .addComponent(btnTaoMoi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(cbxSearchNV, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel31Layout.createSequentialGroup()
                         .addComponent(txtNVNgayPd, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2485,7 +2483,7 @@ public class AdminForm extends javax.swing.JFrame {
                         .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnloadNV, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
                             .addComponent(btnXoaNV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
         jPanel31Layout.setVerticalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2645,11 +2643,11 @@ public class AdminForm extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel30, javax.swing.GroupLayout.PREFERRED_SIZE, 364, Short.MAX_VALUE)
+                    .addComponent(jPanel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel61, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel31, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(48, 48, 48))
         );
@@ -3026,7 +3024,7 @@ public class AdminForm extends javax.swing.JFrame {
         jPanel35.setPreferredSize(new java.awt.Dimension(766, 500));
 
         btnDat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_add_30px.png"))); // NOI18N
-        btnDat.setText("Thêm món");
+        btnDat.setText("Thêm SP");
         btnDat.setBackground(new java.awt.Color(153, 153, 255));
         btnDat.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         btnDat.setForeground(new java.awt.Color(255, 255, 255));
@@ -3039,7 +3037,7 @@ public class AdminForm extends javax.swing.JFrame {
         spnCount.setBorder(javax.swing.BorderFactory.createTitledBorder("Số lượng"));
 
         cbxCategory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cbxCategory.setBorder(javax.swing.BorderFactory.createTitledBorder("Loại món"));
+        cbxCategory.setBorder(javax.swing.BorderFactory.createTitledBorder("Loại sản phẩm"));
         cbxCategory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxCategoryActionPerformed(evt);
@@ -3055,7 +3053,7 @@ public class AdminForm extends javax.swing.JFrame {
         });
 
         btnXoaMonDN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/delete1-30.png"))); // NOI18N
-        btnXoaMonDN.setText("Xóa món");
+        btnXoaMonDN.setText("Xóa SP");
         btnXoaMonDN.setBackground(new java.awt.Color(153, 153, 255));
         btnXoaMonDN.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         btnXoaMonDN.setForeground(new java.awt.Color(255, 255, 255));
@@ -4945,10 +4943,10 @@ public class AdminForm extends javax.swing.JFrame {
         String search = txtSearchMA.getText();
         String typeSearch = String.valueOf(cbxSearchMA.getSelectedItem());
         switch (typeSearch) {
-            case "Mã món":
+            case "Mã sản phẩm":
                 monAnBLL.timkiemMonAnTheoMa(modelMA,search);
                 break;
-            case "Tên món":
+            case "Tên sản phẩm":
                 monAnBLL.timkiemMonAnTheoten(modelMA,search);
                 break;
             case "Số lượng":
@@ -4963,7 +4961,7 @@ public class AdminForm extends javax.swing.JFrame {
             case "Giá hiện tại":
                 monAnBLL.timkiemMonAnTheoGiaHT(modelMA,search);
                 break;                                
-            case "Loại món":
+            case "Loại sản phẩm":
                 monAnBLL.timkiemMonAnTheoTenLoai(modelMA, search);
                 break;                        
         }
@@ -5141,10 +5139,10 @@ public class AdminForm extends javax.swing.JFrame {
         String searchType = String.valueOf(cbxSearchDH.getSelectedItem());
         String ma_loai = loaiMonAnBLL.getMaLoaiByTenLoai(String.valueOf(cbxCategory.getSelectedItem()));
         switch (searchType) {
-            case "Mã món":
+            case "Mã sản phẩm":
                 monAnBLL.timkiemMonAnDNTheoMa(modelFood,search,ma_loai);
                 break;
-            case "Tên món":
+            case "Tên sản phẩm":
                 monAnBLL.timkiemMonAnDNTheoTen(modelFood,search,ma_loai);
                 break;
         }
